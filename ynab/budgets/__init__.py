@@ -23,7 +23,10 @@ class Budget(YNABClient):
         """
         Gets budget data by budget ID
         """
-        pass
+        budget_by_id_endpoint = f'{self.endpoint}/{budget_id}'
+        r = self._make_request(budget_by_id_endpoint)
+        r.raise_for_status()
+        return r.json()
 
 
 

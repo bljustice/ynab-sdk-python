@@ -1,10 +1,10 @@
 from ynab import YNABClient
 
-class Budget(YNABClient):
+class Budgets(YNABClient):
 
     def __init__(self, personal_token):
 
-        super(Budget, self).__init__(personal_token)
+        super(Budgets, self).__init__(personal_token)
         self.endpoint = 'budgets'
 
     def get_all_budgets(self):
@@ -27,6 +27,3 @@ class Budget(YNABClient):
         r = self._make_request(budget_by_id_endpoint)
         r.raise_for_status()
         return r.json()
-
-
-

@@ -1,13 +1,13 @@
 import os
 
 from . import TestCommon
-from ynab.budgets import Budget
+from ynab.budgets import Budgets
 
 class BudgetTests(TestCommon):
 
     def setUp(self):
 
-        self.client = Budget(self.personal_token)
+        self.client = Budgets(self.personal_token)
         self.budget_id = os.environ['YNAB_BUDGET_ID']
 
     def test_get_all_budgets(self):
@@ -22,3 +22,4 @@ class BudgetTests(TestCommon):
         self.assertIsInstance(result, dict)
         self.assertIn('budget', result.get('data'))
         self.assertIn('payees', result.get('data').get('budget'))
+        

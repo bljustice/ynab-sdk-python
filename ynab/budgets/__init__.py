@@ -1,4 +1,4 @@
-from ynab import YNABClient
+from ynab.client import YNABClient
 
 class Budgets(YNABClient):
 

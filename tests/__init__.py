@@ -6,4 +6,5 @@ class TestCommon(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         
-        cls.personal_token = os.environ['YNAB_PERSONAL_TOKEN']
+        cls.personal_token = 'j78934-123ja'
+        cls.budget_id = 'e13904-a485'

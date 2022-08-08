@@ -5,17 +5,13 @@ class Budgets(YNABClient):
     def __init__(self, personal_token):
 
         super(Budgets, self).__init__(personal_token)
-        self.endpoint = 'budgets'
 
     def get_all_budgets(self):
         """
         Gets all budgets for a given personal YNAB token
         """
 
-        params = {
-            'include_accounts': 'true',
-        }
-        r = self._make_request(self.endpoint, **params)
+        r = self._make_request('')
         r.raise_for_status()
         return r.json()
 
@@ -23,7 +19,6 @@ class Budgets(YNABClient):
         """
         Gets budget data by budget ID
         """
-        budget_by_id_endpoint = f'{self.endpoint}/{budget_id}'
-        r = self._make_request(budget_by_id_endpoint)
+        r = self._make_request(budget_id)
         r.raise_for_status()
         return r.json()

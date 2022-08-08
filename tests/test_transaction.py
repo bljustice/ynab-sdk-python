@@ -3,8 +3,8 @@ from unittest import mock
 from . import TestCommon
 from ynab.transactions import Transactions
 
-class CategoryTests(TestCommon):
-
+class TransactionTests(TestCommon):
+    
     def setUp(self):
 
         self.client = Transactions(self.personal_token)

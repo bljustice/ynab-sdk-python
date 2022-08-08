@@ -9,7 +9,6 @@ class BudgetTests(TestCommon):
     def setUp(self):
 
         self.client = Budgets(self.personal_token)
-        self.budget_id = os.environ['YNAB_BUDGET_ID']
 
         self.mock_response = mock.Mock(status_code=200)
         self.mock_response.json.return_value = {
